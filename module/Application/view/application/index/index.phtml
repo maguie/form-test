@@ -1,0 +1,24 @@
+<?php
+$this->headTitle('Welcome');
+
+$this->mainMenu()->setActiveItemId('home');
+
+$this->pageBreadcrumbs()->setItems([
+            'Home'=>$this->url('home')
+            ]);
+?>
+
+<h1>Welcome</h1>
+
+<p>
+    This is the Simple Form application.
+</p>
+
+<ul>
+    <li>
+        <a href="<?php echo $this->url('simpleform'); ?>">Simple Form</a> 
+        This page will allow you to interact with a simple form for email validation.
+    </li>
+    
+</ul>
+

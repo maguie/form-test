@@ -1,0 +1,20 @@
+<?php
+
+$this->headTitle('Simple Form');
+
+$this->mainMenu()->setActiveItemId('simpleForm');
+
+$this->pageBreadcrumbs()->setItems(array(
+            'Home'=>$this->url('home'),
+            'Simple Form'=>$this->url('simpleform')
+            ));
+?>
+
+<h1>Thank You!</h1>
+
+<p>
+    <div class="alert alert-success">
+        Hello <?= $_GET['param1'] ?>!!!
+    </div>
+    <a href="<?php echo $this->url('simpleform'); ?>">Back to Simple Form</a> 
+</p>
