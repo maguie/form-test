@@ -48,7 +48,7 @@ http://104.155.134.252/form-test/public
 Follow the next steps...
  1. Go to the home page and click on "Simple Form" link, this will redirect you to a Simple form with three inputs. First Name and E-mail are required.
  2. When you type email that are not completely valid, you will see the message "Email invalid! Use the basic format local-part@hostname.", this will hide once the complete text is valid.
- 3. Click submit to validate the data, if there is any invalid information, you will see the error message in red color below each input. If the information is valid, you will be redirected to a Thank you page saying Hello <<firstName lastName>>!!!
+ 3. Click submit to validate the data, if there is any invalid information, you will see the error message in red color below each input. If the information is valid, you will be redirected to a Thank you page saying Hello [firstName lastName]!!!
 
 ## Testing phpUnit tests
 First, enable unit test running the command in the route path of your project:
@@ -61,15 +61,20 @@ For the Unit Testings available, you will see the result executing the following
 ./vendor/bin/phpunit
 ```
 
-In order to force a failure in the unit Testings, you could edit the custom function "testInputFiltersAreSetCorrectly", change the following line from $this->assertTrue($inputFilter->has('email')); to:
+In order to force a failure in the unit Testings, you could edit the custom function "testInputFiltersAreSetCorrectly" as follow:
+ 1. Open the testing file in edition mode
+ ```
+ vim module/Application/test/Controller/IndexControllerTest.php
+ ```
+ 2. Look for the function "testInputFiltersAreSetCorrectly" and change the following line from *$this->assertTrue($inputFilter->has('email'));* to:
 ```
 $this->assertTrue($inputFilter->has('email2'));
 ```
-And run again the command
+ 3. And run again the command
 ```
 ./vendor/bin/phpunit
 ```
-You will see one test case failure!
+> You will see one test case failure!
 
 
 ## Questions?
